@@ -45,4 +45,18 @@ public class GenreB implements Interface1 {
             return null;
         }
     }
+      public String displayQueue() {
+        int iCount;
+        String sMessage = "";
+        if (genreB.isEmpty()) {
+            sMessage = sMessage.concat("The Rnb playlist is empty");
+        } else {
+            sMessage = "The Rnb playlist contains: ";
+            for (iCount = 0; iCount < genreB.size(); iCount++) {
+                sMessage = sMessage.concat(genreB.get(iCount));
+                sMessage = sMessage.concat("; ");
+            }
+        }
+        return sMessage;
+    }
 }

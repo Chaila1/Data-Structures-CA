@@ -46,4 +46,18 @@ public class GenreA implements Interface1 {
             return null;
         }
     }
+      public String displayQueue() {
+        int iCount;
+        String sMessage = "";
+        if (genreA.isEmpty()) {
+            sMessage = sMessage.concat("The rap playlist is empty");
+        } else {
+            sMessage = "The rap playlist contains: ";
+            for (iCount = 0; iCount < genreA.size(); iCount++) {
+                sMessage = sMessage.concat(genreA.get(iCount));
+                sMessage = sMessage.concat("; ");
+            }
+        }
+        return sMessage;
+    }
 }

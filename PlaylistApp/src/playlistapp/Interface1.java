@@ -20,4 +20,6 @@ public interface Interface1 {
 
     public Object dequeue();
     
+    public String displayQueue();
+    
 }
