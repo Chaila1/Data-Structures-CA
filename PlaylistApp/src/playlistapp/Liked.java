@@ -40,7 +40,7 @@ public class Liked implements Interface2{
     /**
      * removes the item from the top of the stack and returns it
      */
-    public Object pop() {
+    public String pop() {
         if (!(likedSongs.isEmpty())) {
             return likedSongs.remove(0);
         } else {
