@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * @author Matty School
  */
 public class GenreB implements Interface1 {
+
     private ArrayList<String> genreB;
- 
 
     public GenreB() {
         genreB = new ArrayList<String>();
@@ -45,7 +45,8 @@ public class GenreB implements Interface1 {
             return null;
         }
     }
-      public String displayQueue() {
+
+    public String displayQueue() {
         int iCount;
         String sMessage = "";
         if (genreB.isEmpty()) {
@@ -54,7 +55,7 @@ public class GenreB implements Interface1 {
             sMessage = "The Rnb playlist contains: ";
             for (iCount = 0; iCount < genreB.size(); iCount++) {
                 sMessage = sMessage.concat(genreB.get(iCount));
-                sMessage = sMessage.concat("; ");
+                sMessage = sMessage.concat(", ");
             }
         }
         return sMessage;

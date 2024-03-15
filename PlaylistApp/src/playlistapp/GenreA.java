@@ -12,8 +12,8 @@ import java.util.*;
  * @author Matty School
  */
 public class GenreA implements Interface1 {
+
     private ArrayList<String> genreA;
- 
 
     public GenreA() {
         genreA = new ArrayList<String>();
@@ -46,16 +46,17 @@ public class GenreA implements Interface1 {
             return null;
         }
     }
-      public String displayQueue() {
+
+    public String displayQueue() {
         int iCount;
         String sMessage = "";
         if (genreA.isEmpty()) {
-            sMessage = sMessage.concat("The rap playlist is empty");
+            sMessage = sMessage.concat("The Rap playlist is empty");
         } else {
-            sMessage = "The rap playlist contains: ";
+            sMessage = "The Rap playlist contains: ";
             for (iCount = 0; iCount < genreA.size(); iCount++) {
                 sMessage = sMessage.concat(genreA.get(iCount));
-                sMessage = sMessage.concat("; ");
+                sMessage = sMessage.concat(", ");
             }
         }
         return sMessage;

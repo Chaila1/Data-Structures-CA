@@ -5,7 +5,7 @@
 package playlistapp;
 
 /**
- *
+ * 
  * @author Matty School
  */
 public class Song {

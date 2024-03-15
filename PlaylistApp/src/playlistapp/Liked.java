@@ -4,6 +4,7 @@
  */
 package playlistapp;
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,9 +41,9 @@ public class Liked implements Interface2{
     /**
      * removes the item from the top of the stack and returns it
      */
-    public String pop() {
+    public Object pop() {
         if (!(likedSongs.isEmpty())) {
-            return likedSongs.remove(0);
+            return likedSongs.remove(likedSongs.size()-1);
         } else {
             return null;
         }
@@ -68,15 +69,32 @@ public class Liked implements Interface2{
         int iCount;
         String sMessage = "";
         if (likedSongs.isEmpty()) {
-            sMessage = sMessage.concat("The Stack is EMPTY!");
+            sMessage = sMessage.concat("The Liked Songs playlist is empty");
         } else {
-            sMessage = "The Stack contains: ";
+            sMessage = "The Liked Songs playlist contains: ";
             for (iCount = 0; iCount < likedSongs.size(); iCount++) {
                 sMessage = sMessage.concat(likedSongs.get(iCount));
-                sMessage = sMessage.concat("; ");
+                sMessage = sMessage.concat(", ");
             }
         }
         return sMessage;
     }
     
+    public String search(){
+        if(likedSongs.isEmpty()){
+            JOptionPane.showMessageDialog(null,"sorry there are no songs to search"); 
+        }
+        else{
+            String searchTerm = JOptionPane.showInputDialog(null,"Please enter a song to search");
+           for(String s:likedSongs){ 
+              Song myS = new Song();  
+                if (myS.getSongName().equalsIgnoreCase(searchTerm)){
+                 JOptionPane.showMessageDialog(null,myS.getSongName());
+                }
+            }
+        }
+        return null;
+    }
 }
+    
+

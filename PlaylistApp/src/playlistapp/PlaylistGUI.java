@@ -4,6 +4,8 @@
  */
 package playlistapp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Matty School
@@ -298,18 +300,18 @@ public class PlaylistGUI extends javax.swing.JFrame {
         songTf.setText("");
         genreTf.setText("");
 
-  
-            if (myS.getSongGenre().equalsIgnoreCase("rap")) {
-                myGenreA.enqueue(myLiked.pop());
-                rapTextArea.append(songTf.getText() + ", was successfully added to the playlist rap playlist\n");
-            } else if (myS.getSongGenre().equalsIgnoreCase("Rnb")) {
-                myGenreB.enqueue(myLiked.pop());
-                rTextArea.append(songTf.getText() + ", was successfully added to the playlist rnb playlist\n");
+        // Code to process elements from myLiked
+        if (myS.getSongGenre().equalsIgnoreCase("rap")) {
+            myGenreA.enqueue(myLiked.pop());
+            rapTextArea.append(songTf.getText() + ", was successfully added to the playlist rap playlist\n");
+        } else if (myS.getSongGenre().equalsIgnoreCase("rnb")) {
+            myGenreB.enqueue(myLiked.pop());
+            rTextArea.append(songTf.getText() + ", was successfully added to the playlist rnb playlist\n");
 
-            } else {
-                rapTextArea.append(" invalid input\n");
-            }
-        
+        } else {
+            lTextArea.append(" invalid input, please put either Rnb or Rap\n");
+        }
+
     }//GEN-LAST:event_moveBtnActionPerformed
 
     private void displayBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBtnActionPerformed
@@ -321,17 +323,19 @@ public class PlaylistGUI extends javax.swing.JFrame {
 
     private void repeatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repeatBtnActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_repeatBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
+        myLiked.search();
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void songBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_songBtnActionPerformed
         // TODO add your handling code here:
-         lTextArea.append("There are " + myLiked.size() + " songs in the Liked songs playlist\n");
-         rTextArea.append("There are " + myGenreB.size() + " songs in the Rnb playlist\n");
-         rapTextArea.append("There are " + myGenreA.size() + " songs in the Rap playlist\n");
+        lTextArea.append("There are " + myLiked.size() + " songs in the Liked songs playlist\n");
+        rTextArea.append("There are " + myGenreB.size() + " songs in the Rnb playlist\n");
+        rapTextArea.append("There are " + myGenreA.size() + " songs in the Rap playlist\n");
     }//GEN-LAST:event_songBtnActionPerformed
 
     /**
