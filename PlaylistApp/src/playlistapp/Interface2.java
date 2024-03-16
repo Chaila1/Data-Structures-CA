@@ -9,10 +9,8 @@ package playlistapp;
  * @author Matty School
  */
 public interface Interface2 {
-    
-    public boolean isEmpty();
 
-    public boolean isFull();
+    public boolean isEmpty();
 
     public void push(Object newItem);
 
@@ -20,10 +18,10 @@ public interface Interface2 {
 
     public int size();
 
-    public void emptyStack();
-
     public String displayStack();
-    
-    public String search() ;
-    
+
+    public String search();
+
+    public String repeat();
+
 }

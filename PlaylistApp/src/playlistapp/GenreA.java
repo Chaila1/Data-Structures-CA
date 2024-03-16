@@ -27,24 +27,8 @@ public class GenreA implements Interface1 {
         return genreA.size();
     }
 
-    public Object frontElement() {
-        if (genreA.size() > 0) {
-            return genreA.get(0);
-        } else {
-            return null;
-        }
-    }
-
     public void enqueue(Object newItem) {
         genreA.add((String) newItem);
-    }
-
-    public Object dequeue() {
-        if (genreA.size() > 0) {
-            return genreA.remove(0);
-        } else {
-            return null;
-        }
     }
 
     public String displayQueue() {

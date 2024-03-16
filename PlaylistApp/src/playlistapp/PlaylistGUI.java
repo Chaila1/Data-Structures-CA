@@ -323,12 +323,13 @@ public class PlaylistGUI extends javax.swing.JFrame {
 
     private void repeatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repeatBtnActionPerformed
         // TODO add your handling code here:
+        lTextArea.append(myLiked.repeat() + "\n");
 
     }//GEN-LAST:event_repeatBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-        myLiked.search();
+        lTextArea.append(myLiked.search() + "\n");
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void songBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_songBtnActionPerformed

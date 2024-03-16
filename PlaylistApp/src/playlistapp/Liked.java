@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package playlistapp;
+
 import java.util.*;
 import javax.swing.JOptionPane;
 
@@ -10,8 +11,8 @@ import javax.swing.JOptionPane;
  *
  * @author Matty School
  */
-public class Liked implements Interface2{
-    
+public class Liked implements Interface2 {
+
     private ArrayList<String> likedSongs;
 
     /**
@@ -31,19 +32,11 @@ public class Liked implements Interface2{
     }
 
     /**
-     * always false as there is no limit on the size of this ArrayList based
-     * stack
-     */
-    public boolean isFull() {
-        return false;
-    }
-
-    /**
      * removes the item from the top of the stack and returns it
      */
     public Object pop() {
         if (!(likedSongs.isEmpty())) {
-            return likedSongs.remove(likedSongs.size()-1);
+            return likedSongs.remove(0);
         } else {
             return null;
         }
@@ -54,13 +47,6 @@ public class Liked implements Interface2{
      */
     public void push(Object newItem) {
         likedSongs.add(0, (String) newItem);
-    }
-
-    // removes all elements from the stack
-    public void emptyStack() {
-        while (!likedSongs.isEmpty()) {
-            pop();
-        }
     }
 
     // return a String object that consists of all elements from the stack
@@ -79,26 +65,42 @@ public class Liked implements Interface2{
         }
         return sMessage;
     }
-    
-    public String search(){
-         if(likedSongs.isEmpty()){
-            JOptionPane.showMessageDialog(null,"sorry there are no songs to search for"); 
-        }
-        else{
-            String searchTerm = JOptionPane.showInputDialog(null,"Please enter a song to search");
+
+    public String search() {
+        String response = "";
+        if (likedSongs.isEmpty()) {
+            response = response.concat("Sorry there are no songs to search for");
+        } else {
+            String searchTerm = JOptionPane.showInputDialog(null, "Please enter a song to search");
             ArrayList<String> searchMatches = new ArrayList();
-            for(String songName:likedSongs){
-                if (songName.equalsIgnoreCase(searchTerm)){
+            for (String songName : likedSongs) {
+                if (songName.equalsIgnoreCase(searchTerm)) {
                     searchMatches.add(songName);
-                    JOptionPane.showMessageDialog(null, "the song found was" +searchMatches);
-                }else{
-                    JOptionPane.showMessageDialog(null, "song couldn't be found");
+                    response = response.concat("Title of song found is ");
+                    for (String song : searchMatches) {
+                        response = response.concat(song).concat(" ");
+                    }
+                } else {
+                    response = response.concat("Song entred couldn't be found");
                 }
             }
         }
-         return null;
+        return response;
     }
+
+    public String repeat() {
+        String response = "";
+        ArrayList<String> repeat = new ArrayList();
+        int rep;
+        rep = 1;
+        for (int i = 0; i < rep; i++) {
+            repeat.addAll(likedSongs); // Add all elements from originalList
+            response = response.concat("Playlist was repeated with the songs ");
+            for (String song : repeat) {
+                response = response.concat(song).concat(", ");
+            }
+        }
+        return response; 
+    }
+
 }
-
-    
-
