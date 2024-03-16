@@ -81,20 +81,24 @@ public class Liked implements Interface2{
     }
     
     public String search(){
-        if(likedSongs.isEmpty()){
-            JOptionPane.showMessageDialog(null,"sorry there are no songs to search"); 
+         if(likedSongs.isEmpty()){
+            JOptionPane.showMessageDialog(null,"sorry there are no songs to search for"); 
         }
         else{
             String searchTerm = JOptionPane.showInputDialog(null,"Please enter a song to search");
-           for(String s:likedSongs){ 
-              Song myS = new Song();  
-                if (myS.getSongName().equalsIgnoreCase(searchTerm)){
-                 JOptionPane.showMessageDialog(null,myS.getSongName());
+            ArrayList<String> searchMatches = new ArrayList();
+            for(String songName:likedSongs){
+                if (songName.equalsIgnoreCase(searchTerm)){
+                    searchMatches.add(songName);
+                    JOptionPane.showMessageDialog(null, "the song found was" +searchMatches);
+                }else{
+                    JOptionPane.showMessageDialog(null, "song couldn't be found");
                 }
             }
         }
-        return null;
+         return null;
     }
 }
+
     
 

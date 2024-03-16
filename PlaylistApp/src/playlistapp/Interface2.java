@@ -24,5 +24,6 @@ public interface Interface2 {
 
     public String displayStack();
     
-    public String search();
+    public String search() ;
+    
 }
