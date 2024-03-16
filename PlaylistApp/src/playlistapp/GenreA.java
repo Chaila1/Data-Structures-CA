@@ -5,16 +5,18 @@
 package playlistapp;
 
 import java.util.ArrayList;
-import java.util.*;
 
 /**
  *
  * @author Matty School
  */
 public class GenreA implements Interface1 {
-
+    
+    /*
+       declaring the array 
+    */
     private ArrayList<String> genreA;
-
+    
     public GenreA() {
         genreA = new ArrayList<String>();
     }
@@ -26,11 +28,16 @@ public class GenreA implements Interface1 {
     public int size() {
         return genreA.size();
     }
-
+    /*
+        adds the string to the array
+    */
     public void enqueue(Object newItem) {
         genreA.add((String) newItem);
     }
-
+    
+    /*
+        displays the information in the genreA queue
+    */
     public String displayQueue() {
         int iCount;
         String sMessage = "";

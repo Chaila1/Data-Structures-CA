@@ -300,7 +300,6 @@ public class PlaylistGUI extends javax.swing.JFrame {
         songTf.setText("");
         genreTf.setText("");
 
-        // Code to process elements from myLiked
         if (myS.getSongGenre().equalsIgnoreCase("rap")) {
             myGenreA.enqueue(myLiked.pop());
             rapTextArea.append(songTf.getText() + ", was successfully added to the playlist rap playlist\n");

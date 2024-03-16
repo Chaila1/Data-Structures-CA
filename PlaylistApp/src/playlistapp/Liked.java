@@ -15,24 +15,28 @@ public class Liked implements Interface2 {
 
     private ArrayList<String> likedSongs;
 
-    /**
-     * Create a new instance of Stack
+    /*
+        declaring arraylist
      */
     public Liked() {
         likedSongs = new ArrayList<String>();
     }
-
+    /*
+        counts the number of songs and returns them as an int
+    */
     public int size() {
         return likedSongs.size();
 
     }
-
+    /*
+        checks the array to see if it's full or empty 
+    */
     public boolean isEmpty() {
         return likedSongs.isEmpty();
     }
 
-    /**
-     * removes the item from the top of the stack and returns it
+    /*
+        removes the item from the top of the stack and returns it
      */
     public Object pop() {
         if (!(likedSongs.isEmpty())) {
@@ -42,15 +46,16 @@ public class Liked implements Interface2 {
         }
     }
 
-    /**
-     * puts an item onto the top of the stack
+    /*
+        puts an item onto the top of the stack
      */
     public void push(Object newItem) {
         likedSongs.add(0, (String) newItem);
     }
 
-    // return a String object that consists of all elements from the stack
-    // a FOR loop is used here, but you can use an Iterator instead
+    /*
+        displays the information in the likedSongs Stack with the appropriate messages
+    */
     public String displayStack() {
         int iCount;
         String sMessage = "";
@@ -66,6 +71,9 @@ public class Liked implements Interface2 {
         return sMessage;
     }
 
+    /*
+        Searches the likedSongs arrayList and if there is a match it store that to a different array and the appropriate message is shown to the user
+    */
     public String search() {
         String response = "";
         if (likedSongs.isEmpty()) {
@@ -87,14 +95,16 @@ public class Liked implements Interface2 {
         }
         return response;
     }
-
+    /*
+        It creates a copy of the likedSongs array and stores it to a different one and the copy is shown to the user
+    */
     public String repeat() {
         String response = "";
         ArrayList<String> repeat = new ArrayList();
         int rep;
         rep = 1;
         for (int i = 0; i < rep; i++) {
-            repeat.addAll(likedSongs); // Add all elements from originalList
+            repeat.addAll(likedSongs); 
             response = response.concat("Playlist was repeated with the songs ");
             for (String song : repeat) {
                 response = response.concat(song).concat(", ");
